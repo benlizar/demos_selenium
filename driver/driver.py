@@ -3,7 +3,7 @@ from selenium import webdriver
 
 class Driver(object):
     _driver = None
-    _url = "https://tms-qa.liftit-sandbox.com/login"
+    _url = "http://oms-qa.liftit-sandbox.com/"
 
     def set_up(self):
         self._driver = webdriver.Chrome()

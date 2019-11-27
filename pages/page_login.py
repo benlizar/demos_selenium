@@ -5,9 +5,9 @@ from pages.base_page import BasePage
 
 
 class PageLogin(BasePage):
-    _textbox_email = (By.ID, "email")
-    _textbox_password = (By.ID, "password")
-    _button_login = (By.ID, 'button')
+    _textbox_email = (By.XPATH, "//input[@name='email']")
+    _textbox_password = (By.XPATH, "//input[@name='password']")
+    _button_login = (By.XPATH, "//button[@type='submit']")
     _grid = (By.XPATH, "//*[@class='table __table_white']//a[contains(text(),'#2270')]")
     _dispatch = (By.XPATH, "//a[text()= 'Despachos']")
 
@@ -35,5 +35,6 @@ class PageLogin(BasePage):
 #  EC & IMPLICITS WAITS
 # Xpath - Inputs types[Checkbox, Radiobutton, File,...]
 # TODO: Annotations - Decorator | Factory[Factory builder]
-# TODO: Reporting
+# TODO: Custom Events on webElement
 # TODO: ActionsChains Selenium
+# TODO: Reporting
