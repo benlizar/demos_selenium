@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+from pages.anotaciones import element
 from pages.base_page import BasePage
 
 
@@ -8,20 +9,31 @@ class PageLogin(BasePage):
     _textbox_password = (By.ID, "password")
     _button_login = (By.ID, 'button')
     _grid = (By.XPATH, "//*[@class='table __table_white']//a[contains(text(),'#2270')]")
+    _dispatch = (By.XPATH, "//a[text()= 'Despachos']")
 
+    @element
     def get_textbox_name(self):
-        return self.find_element(self._textbox_email)
+        return self._textbox_email
 
+    @element
     def get_textbox_password(self):
-        return self.find_element(self._textbox_password)
+        return self._textbox_password
 
+    @element
     def get_login_button(self):
-        return self.find_element(self._button_login)
+        return self._button_login
 
+    @element
     def get_grid(self):
-        return self.find_element(self._grid)
+        return self._grid
+
+    @element
+    def dispatch(self):
+        return self._dispatch
 
 # Completar Login | Mejoras
 #  EC & IMPLICITS WAITS
-# TODO: Xpath - Inputs types[Checkbox, Radiobutton, File,...]
-# TODO: Annotations - Decorator | Factory[Method Factory, Abstract Factory, Factory builder]
+# Xpath - Inputs types[Checkbox, Radiobutton, File,...]
+# TODO: Annotations - Decorator | Factory[Factory builder]
+# TODO: Reporting
+# TODO: ActionsChains Selenium

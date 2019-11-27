@@ -17,3 +17,11 @@ class Driver(object):
     def tear_down(self):
         self._driver.quit()
 
+    @staticmethod
+    def getInstance():
+        if Driver._driver is None:
+            Driver()
+        return Driver._driver
+
+    def __init__(self):
+        Driver._driver = self

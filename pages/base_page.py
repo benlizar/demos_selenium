@@ -10,14 +10,9 @@ class BasePage(object):
         self.llamar_driver()
 
     def llamar_driver(self):
-        self._driver = Driver()
+        self._driver = Driver.getInstance()
         self._driver.set_up()
         self._driver.goto_login()
-
-    def find_element(self, element):
-        return WebDriverWait(self._driver.get_driver(), 10).until(
-            EC.visibility_of_element_located((element[0], element[1]))
-        )
 
         # return self._driver.get_driver().find_element(by=element[0], value=element[1])
     def get_title(self):
